@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Entering DreamSmith...</title>
+
+    <link rel="stylesheet" href="transition.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- Transition Video -->
+
+    <video id="introVideo" autoplay playsinline>
+    <source src="entry2.mp4" type="video/mp4">
+</video>
+
+    <!-- Overlay -->
+
+    <div class="overlay"></div>
+
+    <!-- Loading Text -->
+
+    <div class="loading">
+
+        <h1>Entering Dream Smith...</h1>
+
+        <p>Please wait while the Dream Portal opens...</p>
+
+    </div>
+    
+
+    <script>
+
+        const video = document.getElementById("introVideo");
+
+        // Start the video after page loads
+        
+
+        // Go to mission page after video finishes
+        video.addEventListener("ended", () => {
+
+            window.location.href = "mission.html";
+
+        });
+
+    </script>
+
+</body>
+
+</html>

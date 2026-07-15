@@ -1,0 +1,272 @@
+/*==================================================
+                GOOGLE FONT
+==================================================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    background:#000;
+    font-family:'Poppins',sans-serif;
+
+}
+
+
+/*==================================================
+                VIDEO
+==================================================*/
+
+video{
+
+    position: fixed;
+    inset: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    object-fit: auto;
+
+    filter: contrast(1.05) saturate(1.08);
+
+}
+
+/*==================================================
+                OVERLAY
+==================================================*/
+.overlay{
+
+    position: fixed;
+
+    inset: 0;
+
+    background: linear-gradient(
+        rgba(0,0,0,0.05),
+        rgba(0,0,0,0.1),
+        rgba(0,0,0,0.1)
+    );
+
+    z-index: 1;
+
+}
+
+
+/*==================================================
+                LOADING BOX
+==================================================*/
+.loading{
+
+    position: fixed;
+
+    bottom: 45px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 100%;
+
+    text-align: center;
+
+    z-index: 2;
+
+    animation: fadeUp 1s ease;
+
+}
+
+
+/*==================================================
+                HEADING
+==================================================*/
+
+.loading h1{
+
+    font-family:'Cinzel',serif;
+
+    font-size:44px;
+
+    color:#0a0a0a;
+
+    letter-spacing:2px;
+
+    text-shadow:
+
+    0 0 15px rgba(255,255,255,.35),
+
+    0 0 35px rgba(170,120,255,.45);
+
+}
+
+
+/*==================================================
+                SUBTEXT
+==================================================*/
+
+.loading p{
+
+    margin-top:15px;
+
+    font-size:18px;
+
+    color:#0a0a0a;
+
+    letter-spacing:1px;
+
+    opacity:.9;
+
+}
+
+
+/*==================================================
+            ANIMATED DOTS
+==================================================*/
+
+.loading h1::after{
+
+    content:"";
+
+    animation:dots 2s infinite;
+
+}
+
+@keyframes dots{
+
+0%{
+
+content:"";
+
+}
+
+25%{
+
+content:".";
+
+}
+
+50%{
+
+content:"..";
+
+}
+
+75%{
+
+content:"...";
+
+}
+
+100%{
+
+content:"";
+
+}
+
+}
+
+
+/*==================================================
+            FADE ANIMATION
+==================================================*/
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translate(-50%,40px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translate(-50%,0);
+
+}
+
+}
+
+
+/*==================================================
+            GLOW PULSE
+==================================================*/
+
+.loading{
+
+    animation:
+
+    fadeUp 1s ease,
+
+    glow 2.5s infinite alternate;
+
+}
+
+@keyframes glow{
+
+from{
+
+filter:drop-shadow(0 0 10px rgba(180,120,255,.25));
+
+}
+
+to{
+
+filter:drop-shadow(0 0 28px rgba(255,220,180,.5));
+
+}
+
+}
+
+
+/*==================================================
+            RESPONSIVE
+==================================================*/
+
+@media(max-width:768px){
+
+.loading{
+
+    width:90%;
+
+}
+
+.loading h1{
+
+    font-size:30px;
+
+}
+
+.loading p{
+
+    font-size:16px;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.loading h1{
+
+    font-size:24px;
+
+}
+
+.loading p{
+
+    font-size:14px;
+
+}
+
+}
